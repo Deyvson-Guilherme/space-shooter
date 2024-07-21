@@ -4,10 +4,14 @@ local game_functions = require "functions"
 local update_module = require "update"
 local draw_module = require "draw"
 
+fullScreen = true
+screen_interval = 0
+
 gameScale = 7
 love.graphics.setDefaultFilter("nearest", "nearest")
 
 function love.load()
+    love.window.setFullscreen(fullScreen, "desktop")
     game_state = "start"
 
     -- load stars
@@ -48,6 +52,8 @@ function love.load()
 
     rndTime = 0
     rndValue = math.random(1, 10)
+
+    sinx = 700
 end
 
 function love.update(dt)

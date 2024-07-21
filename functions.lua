@@ -28,7 +28,8 @@ function stars_generator()
         elseif (newStar.speed_meter == "quick") then
             newStar.r = 128  newStar.g = 128  newStar.b = 128
         elseif (newStar.speed_meter == "fast") then
-            newStar.r = 255  newStar.g = 255  newStar.b = 255
+            --newStar.r = 255  newStar.g = 255  newStar.b = 255
+            newStar.r = 29  newStar.g = 43  newStar.b = 83
         end
 
         table.insert(stars, newStar)
@@ -47,7 +48,26 @@ function move_stars(time_var)
     end
 end
 
+-- change screen mode
+function screenMode()
+    screen_interval = (screen_interval > 0) and screen_interval - 0.07 or screen_interval
+
+    if (screen_interval <= 0) then
+        if (fullScreen == true and love.keyboard.isDown('f11')) then
+            screen_interval = 0.5
+            fullScreen = false
+             
+        elseif (fullScreen == false and love.keyboard.isDown('f11')) then
+            screen_interval = 0.5
+            fullScreen = true
+        end
+    end
+
+    love.window.setFullscreen(fullScreen, "desktop")
+end
+
 return{
     stars_generator = stars_generator,
-    move_stars = move_stars
+    move_stars = move_stars,
+    screenMode = screenMode
 }
