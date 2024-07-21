@@ -8,8 +8,8 @@ end
 
 function draw.draw_game()
     -------- BACKGROUND --------
-    -- love.graphics.setColor(29 / 255, 43 / 255, 83 / 255) -- set background color
-    love.graphics.setColor(0 / 255, 0 / 255, 50 / 255) -- set background color
+
+    love.graphics.setColor(0/255, 0/255, 0/255) -- set background color
     love.graphics.rectangle('fill', 0, 0, love.graphics.getWidth(), love.graphics.getHeight()) -- draw background
     love.graphics.setColor(255, 255, 255) -- set normal game color
 
@@ -57,6 +57,10 @@ function draw.draw_game()
             --love.graphics.rectangle('line', ship.bullets[i].x, ship.bullets[i].y, ship.sprites.bullet:getWidth(), ship.sprites.bullet:getHeight())
         end
     end
+
+    -- sin logic
+    love.graphics.rectangle('line', sinx, 300, 25, 25)
+    love.graphics.rectangle('line', 700, siny, 25, 25)
 
     -- print game infos
     --[[love.graphics.print(" ship_x: " .. ship.x .. "\n" ..

@@ -11,6 +11,8 @@ function update.update_start()
 end
 
 function update.update_game(time_var)
+    game_functions.screenMode()
+
     -- move stars
     game_functions.move_stars(time_var)
 
@@ -61,6 +63,9 @@ function update.update_game(time_var)
         rndValue = math.random(1, 10)
         rndTime = 0
     end
+
+    sinx = 700 + 100 * math.sin(love.timer.getTime() * 4)
+    siny = 400 + 100 * math.sin(love.timer.getTime() * 4)
 end
 
 return update
