@@ -60,6 +60,7 @@ function draw.draw_game()
 
     -- sin logic
     love.graphics.rectangle('line', sinx, 300, 25, 25)
+    love.graphics.rectangle('line', 700, siny, 25, 25)
 
     -- print game infos
     --[[love.graphics.print(" ship_x: " .. ship.x .. "\n" ..

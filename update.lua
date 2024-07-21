@@ -65,6 +65,7 @@ function update.update_game(time_var)
     end
 
     sinx = 700 + 100 * math.sin(love.timer.getTime() * 4)
+    siny = 400 + 100 * math.sin(love.timer.getTime() * 4)
 end
 
 return update

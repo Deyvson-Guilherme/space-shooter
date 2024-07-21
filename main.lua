@@ -54,6 +54,7 @@ function love.load()
     rndValue = math.random(1, 10)
 
     sinx = 700
+    siny = 400
 end
 
 function love.update(dt)
